@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>GitHub App | Langauges</title>
+</head>
+
+<body>
+    <div class="navigator pt-4">
+        <div class="container">
+            <div class="navigator-links">
+                <a href="index.html" class="btn btn-color">Home</a>
+                <a href="userRepo.html" class="btn btn-color">User Repo</a>
+            </div>
+        </div>
+    </div>
+    <div class="fetchRepos mt-4">
+        <div class="container">
+            <p class="errMsg text-danger"></p>
+            <div class="row ">
+                <div class="col-lg-4 mx-auto ">
+                    <div class="user-content p-3 shadow">
+                        <h2 class="h5 text-center">Fetch Repos by language</h2>
+                        <div class="languages">
+                            <button data-lng="javascript" class="btn mb-3"> JS </button>
+                            <button data-lng="php" class="btn mb-3"> PHP </button>
+                            <button data-lng="css" class="btn mb-3"> CSS </button>
+                            <button data-lng="html" class="btn mb-3"> HTML </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row pt-5">
+                <div class="col-lg-10 mx-auto">
+                    <p id="search-term" class="repo-user"></p>
+                    <div class="repos">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/langRepo.js"></script>
+</body>
+
+</html>

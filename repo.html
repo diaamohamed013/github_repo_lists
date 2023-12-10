@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>GitHub App | Issues</title>
+</head>
+
+<body>
+
+    <div class="navigator pt-4">
+        <div class="container">
+            <div class="navigator-links">
+                <a href="langRepo.html" class="btn btn-color">Language Repo</a>
+                <a href="userRepo.html" class="btn btn-color">User Repo</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="fetchRepos">
+        <div class="container">
+            <p class="errMsg text-danger"></p>
+            <p id="search-term" class="repo-user"></p>
+            <div class="repos">
+            </div>
+        </div>
+    </div>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/repo.js"></script>
+</body>
+
+</html>

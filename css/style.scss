@@ -1,0 +1,199 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;500;600;700&display=swap");
+
+$mainColor: #333;
+$secondColor: #41474c;
+$iconColor: #5163a4;
+$main_BGColor: rgba(245, 247, 255, 0.85);
+$btnColor: #fff;
+$btn_BGColor: 113.87deg, #2663df 14.81%, #758ff0 88.76%;
+$btnShadow: 0px 6px 10px #9cadf2;
+$userContent_BGColor: rgba(245, 247, 255, 0.85);
+
+@mixin transitionFunction($t, $d) {
+    transition: $t $d;
+    -webkit-transition: $t $d;
+    -moz-transition: $t $d;
+    -ms-transition: $t $d;
+    -o-transition: $t $d;
+}
+
+@mixin borderRadius($r) {
+    border-radius: $r;
+    -webkit-border-radius: $r;
+    -moz-border-radius: $r;
+    -ms-border-radius: $r;
+    -o-border-radius: $r;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    display: inline-block;
+    text-decoration: none;
+}
+
+p {
+    color: $secondColor;
+}
+
+.btn {
+    &:focus {
+        outline: none;
+        box-shadow: none;
+    }
+}
+
+body {
+    font-family: "Josefin Sans", sans-serif;
+    background-image: url("../images/bodyImg.png");
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/* styling for home page */
+.home {
+    // background-color: $main_BGColor;
+    // width: 85%;
+    // margin: 0 auto;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    text-transform: capitalize;
+    .home-content-head {
+        h1 {
+            font-size: 3.5rem;
+            color: $mainColor;
+            line-height: 1.8;
+            span {
+                i {
+                    font-size: 30px;
+                    color: $iconColor;
+                }
+            }
+        }
+        p {
+            font-weight: 500;
+            line-height: 1.9;
+            a.pLink {
+                color: $iconColor;
+                margin: 0 5px;
+            }
+        }
+    }
+    .home-content-links {
+        .btn {
+            color: $btnColor;
+            padding: 12px 35px;
+            border: 2px solid;
+            margin-bottom: 10px;
+        }
+        .btn {
+            &:nth-child(1) {
+                background: linear-gradient($btn_BGColor);
+                margin-right: 10px;
+                border-color: transparent;
+            }
+        }
+        .btn {
+            &:nth-child(2) {
+                border-color: #2663df;
+                margin-right: 10px;
+                &:hover {
+                    background: linear-gradient($btn_BGColor);
+                    border-color: transparent;
+                }
+            }
+        }
+    }
+}
+
+/* styling for links that navigate to home or to data that fetched */
+.navigator-links {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .btn {
+        color: $btnColor !important;
+    }
+    .btn-color {
+        background-color: $iconColor;
+    }
+}
+
+/* styling for user and language page */
+
+.commen {
+    background-color: $userContent_BGColor;
+    @include borderRadius(10px);
+}
+
+.fetchRepos {
+    .user-content {
+        @extend .commen;
+        color: $mainColor;
+        h2 {
+            line-height: 1.9;
+            margin-bottom: 20px;
+        }
+        input {
+            color: $secondColor !important;
+        }
+        .btn {
+            color: $btnColor;
+            width: 100%;
+            padding: 12px 32px;
+            background: linear-gradient($btn_BGColor);
+        }
+    }
+    a.repo-item {
+        @extend .commen;
+        margin: 10px 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        color: $iconColor;
+    }
+}
+
+@media screen and (max-width: 769px) {
+    .home {
+        .home-content-head {
+            h1 {
+                font-size: 2rem;
+                span {
+                    i {
+                        font-size: 20px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 481px) {
+    .home {
+        .home-content-head {
+            h1 {
+                font-size: 1.5rem;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 421px) {
+    .navigator-links {
+        flex-direction: column;
+        .btn {
+            &:nth-child(1) {
+                margin-bottom: 10px;
+            }
+        }
+    }
+}
